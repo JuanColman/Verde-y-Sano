@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juancolman.github.io/Verde-y-Sano/sitemap.xml

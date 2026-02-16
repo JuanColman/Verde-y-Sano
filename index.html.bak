@@ -53,7 +53,6 @@
     </script>
 
 
-
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -241,6 +240,31 @@
             }
         }
 
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
 
 
         section {
@@ -729,69 +753,74 @@
             }
         }
 
-        /* SMARTPHONES & TABLETS (Adjusted for modern devices) */
+        /* MOBILE & TABLET PORTRAIT (< 900px) */
         @media (max-width: 900px) {
             .hero {
                 height: auto;
-                min-height: 80vh;
+                min-height: 100vh;
                 padding-top: 100px;
                 padding-bottom: 60px;
                 text-align: center;
             }
 
             .hero h1 {
-                font-size: clamp(2.2rem, 8vw, 3rem);
+                font-size: 2.8rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1.25rem;
                 margin-left: auto;
                 margin-right: auto;
-                max-width: 90%;
-            }
-
-            h2 {
-                font-size: clamp(1.8rem, 6vw, 2.5rem);
             }
 
             section {
-                padding: 60px 15px;
-                /* Added horizontal padding to prevent text touching edges */
+                padding: 60px 0;
             }
 
             /* Stack columns */
             .product-container,
             .story {
                 display: flex;
+                /* Force flex */
                 flex-direction: column;
-                gap: 40px !important;
-                /* Reduced gap for mobile */
+                /* Stack vertically */
+                gap: 80px !important;
+                /* Force large gap */
                 align-items: center;
             }
 
+            /* Product specific: Text Top, Image Bottom */
+            /* Button is in .product-info, so it sits above .product-img */
+
             .product-info {
                 text-align: center;
-                margin-bottom: 0;
+                margin-bottom: 20px;
+                /* Extra safety margin */
             }
 
             .story {
                 flex-direction: column;
+                /* Image Top, Text Bottom as per HTML? check DOM */
+                /* DOM is Img then Content. column = Img Top. */
             }
 
+            /* If we want Story Image first, order is correct by DOM. */
+            /* If we want Product Image first? No, user implied button above image. */
+
             .product-list {
-                display: block;
-                /* Full width list */
+                display: inline-block;
                 text-align: left;
-                margin: 20px auto;
-                max-width: 90%;
+                margin-top: 10px;
+                margin-bottom: 30px;
             }
 
             .story-img,
             .product-img {
-                max-height: 300px;
+                max-height: 350px;
                 width: 100%;
-                max-width: 450px;
-                margin-top: 20px;
+                max-width: 500px;
+                margin-top: 40px;
+                /* Extra separation from button above */
             }
 
             .nav-links {
@@ -806,85 +835,34 @@
                 display: flex;
                 flex-direction: column;
                 position: absolute;
-                top: 70px;
+                top: 80px;
                 left: 0;
                 width: 100%;
                 background: var(--white);
                 padding: 30px 20px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
                 text-align: center;
-                gap: 15px;
-                border-bottom: 2px solid var(--primary);
-                z-index: 1001;
-            }
-
-            .whatsapp-link.btn {
-                margin: 0 auto;
+                gap: 20px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             }
         }
 
-        /* EXTRA SMALL DEVICES (< 480px) */
+        /* SMALL MOBILE (< 480px) */
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .price-tag {
-                font-size: 1.2rem;
-                padding: 8px 15px;
+                font-size: 2.4rem;
             }
 
             .btn {
                 width: 100%;
-                padding: 12px 15px;
-                font-size: 0.9rem;
             }
 
+            /* Full width buttons on small screens */
             .product-container {
-                gap: 30px !important;
+                gap: 60px;
             }
-        }
 
-
-        .map-card {
-            display: block;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .map-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .map-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(45, 90, 39, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .map-card:hover .map-overlay {
-            opacity: 1;
-        }
-
-        .map-btn {
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.9rem;
+            /* Slightly smaller gap on tiny screens but still distinct */
         }
     </style>
 </head>
@@ -917,9 +895,7 @@
                         </a>
                         <a href="#contacto" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Hacer Pedido</a>
                     </div>
-                    <button class="mobile-toggle" aria-label="Abrir menú de navegación">
-                        <i class="fas fa-bars"></i>
-                    </button>
+                    <div class="mobile-toggle">â˜°</div>
                 </nav>
             </div>
         </header>
@@ -978,16 +954,12 @@
             <div class="container">
                 <div class="product-info">
                     <h2>El Bolsón Semanal</h2>
-                    <span class="price-tag"
-                        style="background: #2d5a27; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 1.2rem;">$15.000
-                        / 15kg</span>
-                    <p style="margin-top: 20px; margin-bottom: 20px;">Una selección equilibrada de 15 kilos de las
-                        mejores verduras de estación. Ideal para familias que buscan alimentación saludable a precio
-                        justo.</p>
+                    <span class="price-tag">$15.000 / 15kg</span>
+                    <p style="margin-bottom: 20px;">Una selección equilibrada de 15 kilos de las mejores verduras de
+                        estación. Ideal para familias que buscan alimentación saludable a precio justo.</p>
                     <ul class="product-list">
                         <li>Precio final: $1.000 por kilo</li>
-                        <li><strong>Variedad según cosecha:</strong> Distintas variedades de tomates, lechuga,
-                            zanahorias, zapallos, papas, pepinos, cebollas, ajos, kale, melones y más.</li>
+                        <li>Variedad según cosecha (papas, tomates, lechuga, etc.)</li>
                         <li>Sin intermediarios</li>
                         <li>Cajón de madera retornable opcional</li>
                     </ul>
@@ -1037,8 +1009,7 @@
                         un
                         sueño grande: devolverle a la tierra lo que ella nos da.</p>
                     <br>
-                    <p>Ubicados en el corazón de El Pato, elegimos la <strong>Agroecología Certificada</strong> como
-                        forma de vida, porque no
+                    <p>Ubicados en el corazón de El Pato, elegimos la agroecología como forma de vida, porque no
                         entendemos
                         el bienestar sin el respeto absoluto por la naturaleza. Cada bolsón que llega a tu mesa es el
                         resultado de manos que siembran, cuidan y cosechan con amor, sin químicos ni atajos.</p>
@@ -1085,21 +1056,18 @@
                     <h2>Ubicación</h2>
                     <p>Estamos en el corazón productivo de El Pato, Berazategui.</p>
                 </div>
-                <a href="https://www.google.com/maps/place/C.+620+3004,+B1893EFB+El+Pato,+Provincia+de+Buenos+Aires/@-34.8872104,-58.1711509,21z/data=!4m6!3m5!1s0x95a2d9c68bd679bd:0x7254cfba737d8e93!8m2!3d-34.8872104!4d-58.1711509!16s%2Fg%2F11rcynmtvf?entry=ttu&g_ep=EgoyMDI2MDIxMS4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank" class="map-card">
-                    <div class="map-placeholder">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d411.3831861054592!2d-58.17144415848529!3d-34.88721469550889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d9c68bd679bd%3A0x7254cfba737d8e93!2sC.%20620%203004%2C%20B1893EFB%20El%20Pato%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1739742400000!5m2!1ses!2sar"
-                            width="100%" height="100%" style="border:0; pointer-events: none;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                        <div class="map-overlay">
-                            <span class="map-btn">Ver en Google Maps</span>
-                        </div>
-                    </div>
-                </a>
-                <p style="text-align: center; margin-top: 20px;"><strong>Dirección:</strong> Calle 620 N° 3004, El Pato,
+                <div class="map-placeholder">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13083.567843423748!2d-58.1884144!3d-34.9351239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d85f7f381861%3A0x6b77247833054178!2sEl%20Pato%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1710000000000!5m2!1ses!2sar"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p style="text-align: center; margin-top: 10px;"><strong>Dirección:</strong> Ruta 2 Km 40, El Pato,
                     Berazategui.</p>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="btn whatsapp-link">Coordinar Visita</a>
+                </div>
             </div>
         </section>
 
@@ -1125,66 +1093,61 @@
                     </a>
                 </div>
 
-                <div class="footer-bottom"
-                    style="margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                    <p>© 2026 Verde y Sano. Todos los derechos reservados.</p>
-                    <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">Página desarrollada por <a
-                            href="mailto:lic.juancolman@gmail.com"
-                            style="color: inherit; text-decoration: underline;">lic.juancolman@gmail.com</a></p>
-                </div>
+                <p>© 2026 Verde y Sano. Todos los derechos reservados.</p>
+            </div>
+        </footer>
 
-                <!-- Floating WhatsApp -->
-                <a href="javascript:void(0)" class="floating-whatsapp whatsapp-link" title="Hablar por WhatsApp">
-                    <svg viewBox="0 0 24 24">
-                        <path
-                            d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M16.92 14.88C16.83 14.8 16.6 14.69 16.32 14.5C16.03 14.32 14.63 13.63 14.36 13.5C14.1 13.43 13.92 13.38 13.73 13.66C13.55 13.93 13.01 14.56 12.85 14.74C12.69 14.93 12.53 14.95 12.24 14.81C11.95 14.66 11.02 14.36 9.93 13.38C9.06 12.61 8.48 11.66 8.32 11.38C8.16 11.11 8.3 10.96 8.45 10.82C8.58 10.69 8.74 10.49 8.88 10.32C9.03 10.16 9.08 10.04 9.18 9.84C9.28 9.65 9.23 9.48 9.15 9.32C9.08 9.16 8.52 7.8 8.29 7.24C8.06 6.7 7.83 6.77 7.66 6.77C7.5 6.77 7.31 6.76 7.12 6.76C6.93 6.76 6.62 6.83 6.36 7.11C6.1 7.4 5.37 8.09 5.37 9.5C5.37 10.9 6.4 12.26 6.55 12.44C6.69 12.63 8.68 15.69 11.72 17C12.45 17.31 13.01 17.5 13.46 17.64C14.22 17.88 14.92 17.85 15.47 17.77C16.08 17.68 17.35 17 17.62 16.25C17.88 15.5 17.88 14.85 17.8 14.73C17.73 14.6 17.53 14.5 17.36 14.41L16.92 14.88Z" />
-                    </svg>
-                </a>
+        <!-- Floating WhatsApp -->
+        <a href="#" class="floating-whatsapp whatsapp-link" title="Hablar por WhatsApp">
+            <svg viewBox="0 0 24 24">
+                <path
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M16.92 14.88C16.83 14.8 16.6 14.69 16.32 14.5C16.03 14.32 14.63 13.63 14.36 13.5C14.1 13.43 13.92 13.38 13.73 13.66C13.55 13.93 13.01 14.56 12.85 14.74C12.69 14.93 12.53 14.95 12.24 14.81C11.95 14.66 11.02 14.36 9.93 13.38C9.06 12.61 8.48 11.66 8.32 11.38C8.16 11.11 8.3 10.96 8.45 10.82C8.58 10.69 8.74 10.49 8.88 10.32C9.03 10.16 9.08 10.04 9.18 9.84C9.28 9.65 9.23 9.48 9.15 9.32C9.08 9.16 8.52 7.8 8.29 7.24C8.06 6.7 7.83 6.77 7.66 6.77C7.5 6.77 7.31 6.76 7.12 6.76C6.93 6.76 6.62 6.83 6.36 7.11C6.1 7.4 5.37 8.09 5.37 9.5C5.37 10.9 6.4 12.26 6.55 12.44C6.69 12.63 8.68 15.69 11.72 17C12.45 17.31 13.01 17.5 13.46 17.64C14.22 17.88 14.92 17.85 15.47 17.77C16.08 17.68 17.35 17 17.62 16.25C17.88 15.5 17.88 14.85 17.8 14.73C17.73 14.6 17.53 14.5 17.36 14.41L16.92 14.88Z" />
+            </svg>
+        </a>
 
-                <script>
-                    // WhatsApp Logic
-                    const phone = "5491126947928"; // NÃºmero real
-                    const defaultMsg = "Hola, estoy interesado en los bolsones de Verde y Sano!";
+        <script>
+            // WhatsApp Logic
+            const phone = "5491126947928"; // NÃºmero real
+            const defaultMsg = "Hola, estoy interesado en los bolsones de Verde y Sano!";
 
-                    document.querySelectorAll('.whatsapp-link').forEach(link => {
-                        link.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            const msg = link.getAttribute('data-msg') || defaultMsg;
-                            const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
-                            window.open(url, '_blank');
-                        });
+            document.querySelectorAll('.whatsapp-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const msg = link.getAttribute('data-msg') || defaultMsg;
+                    const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+                    window.open(url, '_blank');
+                });
+            });
+
+            // Mobile Menu
+            const toggle = document.querySelector('.mobile-toggle');
+            const nav = document.querySelector('.nav-links');
+
+            toggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    nav.classList.remove('active'); // Close menu on click
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
                     });
+                });
+            });
 
-                    // Mobile Menu
-                    const toggle = document.querySelector('.mobile-toggle');
-                    const nav = document.querySelector('.nav-links');
-
-                    toggle.addEventListener('click', () => {
-                        nav.classList.toggle('active');
-                    });
-
-                    // Smooth Scroll
-                    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                        anchor.addEventListener('click', function (e) {
-                            e.preventDefault();
-                            nav.classList.remove('active'); // Close menu on click
-                            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        });
-                    });
-
-                    // Header scroll effect
-                    window.addEventListener('scroll', () => {
-                        const header = document.querySelector('header');
-                        if (window.scrollY > 50) {
-                            header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
-                        } else {
-                            header.style.boxShadow = "0 2px 20px rgba(0,0,0,0.05)";
-                        }
-                    });
-                </script>
-
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+                } else {
+                    header.style.boxShadow = "0 2px 20px rgba(0,0,0,0.05)";
+                }
+            });
+        </script>
 </body>
 
 </html>
