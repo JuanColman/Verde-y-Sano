@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verde y Sano | Del Campo a la Mesa</title>
+    <meta name="description"
+        content="Bolsones de verdura agroecológica certificada directo del productor en El Pato, Berazategui. Calidad premium, libre de agroquímicos.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&family=Satisfy&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            /* Sustainable Agroecology Palette */
+            --primary: #2d4f1e;
+            /* Deep Forest Green - Trust & Nature */
+            --primary-light: #6a994e;
+            /* Fresh Growth Green - Vitality */
+            --secondary: #bc6c25;
+            /* Earth/Soil Brown - Grounding */
+            --accent: #e36414;
+            /* Harvest Orange - Vibrant CTA */
+
+            /* Backgrounds */
+            --bg-light: #fcfaf5;
+            /* Warm Cream/Natural Paper - Organic feel */
+            --bg-section: #e9edc9;
+            /* Soft Olive Green Tint - Sections */
+
+            /* Text & UI */
+            --text-dark: #1a1a1a;
+            /* Soft Black for readability */
+            --text-gray: #4a4a4a;
+            /* Darker Gray for contrast */
+            --white: #ffffff;
+
+            /* UI Elements */
+            --radius: 12px;
+            /* Slightly tighter radius for cleaner look */
+            --shadow: 0 10px 30px rgba(45, 79, 30, 0.08);
+            /* Green-tinted shadow */
+            --container: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--primary-light);
+            color: var(--white);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Subtle underline for headings */
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        .section-center h2::after {
+            margin: 10px auto;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: var(--container);
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 14px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+            border: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn.secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn.cta-pulse {
+            background: linear-gradient(135deg, var(--accent), #d15206);
+            /* Terracotta Gradient */
+            animation: pulse-orange 2s infinite;
+            box-shadow: 0 4px 15px rgba(227, 100, 20, 0.4);
+        }
+
+        @keyframes pulse-orange {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 111, 0, 0.7);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(255, 111, 0, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(255, 111, 0, 0);
+            }
+        }
+
+        section {
+            padding: 100px 0;
+            scroll-margin-top: 130px;
+            /* Prevent fixed header from covering content */
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            transition: 0.3s;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Satisfy', cursive;
+            /* Handwritten style to match logo */
+            font-weight: 400;
+            font-size: 2rem;
+            /* Slightly larger for readability */
+            color: var(--primary);
+        }
+
+        .logo svg {
+            height: 42px;
+            width: 42px;
+            fill: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a:not(.btn) {
+            font-weight: 500;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .nav-links a:not(.btn)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: 0.3s;
+        }
+
+        .nav-links a:not(.btn):hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:not(.btn):hover {
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            height: 85vh;
+            /* Balanced height */
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            /* Stunning fresh vegetables background */
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%), url('Imagen de portada.png') center/cover no-repeat;
+            color: var(--white);
+            margin-top: 0;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.2rem;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0.95;
+            max-width: 500px;
+        }
+
+        /* BENEFITS */
+        .benefits {
+            background-color: var(--bg-light);
+            /* Cream background */
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .section-center {
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            top: 0;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .benefit-card:hover {
+            top: -10px;
+            box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--bg-section);
+            /* Soft Olive to match palette */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .benefit-icon svg {
+            width: 35px;
+            height: 35px;
+            fill: currentColor;
+        }
+
+        .benefit-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* PRODUCT */
+        .product {
+            background-color: var(--bg-section);
+            /* Soft Olive tint */
+            padding: 100px 0;
+        }
+
+        .product-container {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .product-img {
+            flex: 0.9;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            max-height: 500px;
+            margin-top: 60px;
+            /* Separating from button */
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            flex: 1.1;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .product-list {
+            margin-bottom: 30px;
+        }
+
+        .product-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+
+        .product-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 24px;
+            height: 24px;
+            background: var(--primary-light);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* HOW IT WORKS */
+        .how-it-works {
+            background-color: var(--bg-light);
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            position: relative;
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        /* ABOUT / HISTORY */
+        .story {
+            display: flex;
+            /* Changed from Grid to Flex for consistency */
+            align-items: center;
+            gap: 80px;
+            padding: 100px 0;
+            background-color: var(--bg-section);
+            /* Matching product section color */
+        }
+
+        .story-content h2 {
+            color: var(--secondary);
+        }
+
+        .story-img {
+            flex: 0.9;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-top: 60px;
+            /* Matching product section spacing */
+            max-height: 600px;
+            /* Increased height again to show more body and ensure no faces are cut */
+        }
+
+        .story-content {
+            flex: 1.1;
+        }
+
+        /* Crop image to show waist up */
+        .story-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            /* Focus on top to ensure heads aren't cut off */
+            display: block;
+        }
+
+        /* B2B / WHOLESALE */
+        .b2b {
+            background-color: #f0ebd8;
+            /* Warm Earthy Beige */
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .b2b h2 {
+            color: var(--secondary);
+        }
+
+        .b2b-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .b2b-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--radius);
+            border-top: 5px solid var(--secondary);
+            text-align: left;
+        }
+
+        .b2b-card h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        /* CONTACT / FOOTER */
+        .pickup {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 350px;
+            background: var(--bg-section);
+            /* Consistent loading background */
+            border-radius: var(--radius);
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        footer {
+            background: var(--primary);
+            /* Deep Forest Green */
+            color: var(--white);
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Satisfy', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            color: var(--white);
+        }
+
+        /* FLOATING WHATSAPP */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 2000;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .floating-whatsapp svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+        }
+
+        /* RESPONSIVE TWEAKS */
+        /* TABET & SMALL LAPTOP (900px - 1100px) */
+        @media (max-width: 1100px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .product-container,
+            .story {
+                gap: 40px;
+            }
+
+            .product-img,
+            .story-img {
+                max-height: 400px;
+            }
+        }
+
+        /* MOBILE & TABLET PORTRAIT (< 900px) */
+        @media (max-width: 900px) {
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding-top: 100px;
+                padding-bottom: 60px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            /* Stack columns */
+            .product-container,
+            .story {
+                display: flex;
+                /* Force flex */
+                flex-direction: column;
+                /* Stack vertically */
+                gap: 80px !important;
+                /* Force large gap */
+                align-items: center;
+            }
+
+            /* Product specific: Text Top, Image Bottom */
+            /* Button is in .product-info, so it sits above .product-img */
+
+            .product-info {
+                text-align: center;
+                margin-bottom: 20px;
+                /* Extra safety margin */
+            }
+
+            .story {
+                flex-direction: column;
+                /* Image Top, Text Bottom as per HTML? check DOM */
+                /* DOM is Img then Content. column = Img Top. */
+            }
+
+            /* If we want Story Image first, order is correct by DOM. */
+            /* If we want Product Image first? No, user implied button above image. */
+
+            .product-list {
+                display: inline-block;
+                text-align: left;
+                margin-top: 10px;
+                margin-bottom: 30px;
+            }
+
+            .story-img,
+            .product-img {
+                max-height: 350px;
+                width: 100%;
+                max-width: 500px;
+                margin-top: 40px;
+                /* Extra separation from button above */
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 30px 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                gap: 20px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        /* SMALL MOBILE (< 480px) */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            /* Full width buttons on small screens */
+            .product-container {
+                gap: 60px;
+            }
+
+            /* Slightly smaller gap on tiny screens but still distinct */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#inicio" class="logo" style="text-decoration: none;">
+                    <!-- Local Image Logo -->
+                    <img src="logo.jpeg" alt="Verde y Sano Logo" style="height: 90px; width: auto; border-radius: 50%;">
+                    Verde y Sano
+                </a>
+                <div class="nav-links">
+                    <a href="#beneficios">Beneficios</a>
+                    <a href="#producto">El Bolsón</a>
+                    <a href="#historia">Historia</a>
+                    <a href="#mayorista">Mayoristas</a>
+                    <a href="https://www.instagram.com/verduras_agroecologica" target="_blank" title="Instagram"
+                        style="display: flex; align-items: center; gap: 5px; color: var(--primary);">
+                        <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: currentColor;">
+                            <path
+                                d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M16.5,6.35C16.92,6.35 17.25,6.68 17.25,7.1C17.25,7.53 16.92,7.85 16.5,7.85C16.08,7.85 15.75,7.53 15.75,7.1C15.75,6.68 16.08,6.35 16.5,6.35Z" />
+                        </svg>
+                        <span style="font-size: 0.9rem; font-weight: 600;">Seguinos</span>
+                    </a>
+                    <a href="#contacto" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Hacer Pedido</a>
+                </div>
+                <div class="mobile-toggle">☰</div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <h1>Del campo a tu mesa</h1>
+            <p>Producción agroecológica certificada. Verduras frescas, sin químicos y cultivadas con amor en El Pato,
+                Berazategui.</p>
+            <a href="#" class="btn cta-pulse whatsapp-link">Pedir Bolsón Ahora</a>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <h2>¿Por qué elegirnos?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
+                        </svg>
+                    </div>
+                    <h3>Agroecológico Certificado</h3>
+                    <p>Garantía de calidad. Cultivamos respetando los ciclos naturales y sin agroquímicos.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z" />
+                        </svg>
+                    </div>
+                    <h3>Cosecha Semanal</h3>
+                    <p>Tus verduras se cosechan el mismo día de la entrega. Frescura inigualable.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M16 11V5H6V11C6 11 6 13.5 11 16.5V20H8V22H16V20H13V16.5C18 13.5 18 11 18 11M3 3H21V5H3V3Z" />
+                        </svg>
+                    </div>
+                    <h3>Equipo Profesional</h3>
+                    <p>Producción a cargo de estudiantes y docentes de agronomía comprometidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product" id="producto">
+        <div class="container">
+            <div class="product-info">
+                <h2>El Bolsón Semanal</h2>
+                <span class="price-tag">$15.000 / 15kg</span>
+                <p style="margin-bottom: 20px;">Una selección equilibrada de 15 kilos de las mejores verduras de
+                    estación. Ideal para familias que buscan alimentación saludable a precio justo.</p>
+                <ul class="product-list">
+                    <li>Precio final: $1.000 por kilo</li>
+                    <li>Variedad según cosecha (papas, tomates, lechuga, etc.)</li>
+                    <li>Sin intermediarios</li>
+                    <li>Cajón de madera retornable opcional</li>
+                </ul>
+                <a href="#" class="btn whatsapp-link">Reservar mi bolsón</a>
+            </div>
+            <div class="product-img">
+                <img src="foto siembra.jpeg" alt="Bolsón de verduras frescas">
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2>¿Cómo funciona?</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Hacé tu pedido</h3>
+                    <p>Envianos un WhatsApp reservando tu bolsón antes del Viernes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Cosechamos</h3>
+                    <p>El equipo prepara cada bolsón seleccionando lo mejor de la huerta.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Retirás o Recibís</h3>
+                    <p>Coordinamos la entrega o retiro por nuestro punto en El Pato.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History / Story -->
+    <section class="story" id="historia">
+        <div class="container">
+            <div class="story-img">
+                <img src="team.jpg" alt="Equipo de Verde y Sano en el campo">
+            </div>
+            <div class="story-content">
+                <h2>Nuestra Historia</h2>
+                <h3 style="margin-bottom: 20px; font-weight: 400; color: #555;">Pasión por la tierra en El Pato</h3>
+                <p>En <strong>Verde y Sano</strong>, somos mucho más que productores; somos una familia unida por un
+                    sueño grande: devolverle a la tierra lo que ella nos da.</p>
+                <br>
+                <p>Ubicados en el corazón de El Pato, elegimos la agroecología como forma de vida, porque no entendemos
+                    el bienestar sin el respeto absoluto por la naturaleza. Cada bolsón que llega a tu mesa es el
+                    resultado de manos que siembran, cuidan y cosechan con amor, sin químicos ni atajos.</p>
+                <br>
+                <p>Gracias por apoyar el trabajo local y sumarte a una alimentación más consciente.</p>
+                <br>
+                <p><strong>¡Bienvenidos a nuestra huerta y a nuestra forma de ver el mundo! 👨‍🌾👩‍🌾</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B Section -->
+    <section class="b2b" id="mayorista">
+        <div class="container">
+            <h2>¿Tenés un negocio?</h2>
+            <p>Abastecemos a comercios con la mejor calidad y precios especiales.</p>
+            <div class="b2b-grid">
+                <div class="b2b-card">
+                    <h3>Restaurantes</h3>
+                    <p>Pedidos personalizados según tu menú. Calidad gourmet y frescura diaria para tus platos.</p>
+                </div>
+                <div class="b2b-card">
+                    <h3>Verdulerías</h3>
+                    <p>Compra mayorista directa. Diferenciá tu negocio ofreciendo productos agroecológicos certificados.
+                    </p>
+                </div>
+                <div class="b2b-card">
+                    <h3>Almacenes</h3>
+                    <p>Incorporá bolsones cerrados listos para vender. Una opción práctica para tus clientes.</p>
+                </div>
+            </div>
+            <br><br>
+            <a href="#" class="btn secondary whatsapp-link"
+                data-msg="Hola, me interesa comprar al por mayor para mi negocio.">Consultar por Mayorista</a>
+        </div>
+    </section>
+
+    <!-- Location / Contact -->
+    <section class="pickup" id="contacto">
+        <div class="container">
+            <h2>Punto de Retiro</h2>
+            <p>Estamos en El Pato, Berazategui. A pocos minutos de la autopista.</p>
+            <!-- Simulate Map -->
+            <!-- Real Map Embed -->
+            <div class="map-placeholder" style="background: none; padding: 0; overflow: hidden;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13083.567843423748!2d-58.1884144!3d-34.9351239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2d85f7f381861%3A0x6b77247833054178!2sEl%20Pato%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1710000000000!5m2!1ses!2sar"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <p style="text-align: center; margin-top: 10px; color: #555;"><strong>Ubicación:</strong> Ruta 2 Km 40, El
+                Pato, Berazategui</p>
+            <a href="#" class="btn whatsapp-link">Coordinar visita</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Verde y Sano</div>
+            <p>Del campo a la mesa.</p>
+
+            <div style="margin: 20px 0;">
+                <a href="https://www.instagram.com/verduras_agroecologica" target="_blank"
+                    style="display: inline-flex; align-items: center; gap: 8px; font-weight: 500; color: white;">
+                    <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: white;">
+                        <path
+                            d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M16.5,6.35C16.92,6.35 17.25,6.68 17.25,7.1C17.25,7.53 16.92,7.85 16.5,7.85C16.08,7.85 15.75,7.53 15.75,7.1C15.75,6.68 16.08,6.35 16.5,6.35Z" />
+                    </svg>
+                    @verduras_agroecologica
+                </a>
+            </div>
+
+            <p>© 2026 Verde y Sano. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="#" class="floating-whatsapp whatsapp-link" title="Hablar por WhatsApp">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M16.92 14.88C16.83 14.8 16.6 14.69 16.32 14.5C16.03 14.32 14.63 13.63 14.36 13.5C14.1 13.43 13.92 13.38 13.73 13.66C13.55 13.93 13.01 14.56 12.85 14.74C12.69 14.93 12.53 14.95 12.24 14.81C11.95 14.66 11.02 14.36 9.93 13.38C9.06 12.61 8.48 11.66 8.32 11.38C8.16 11.11 8.3 10.96 8.45 10.82C8.58 10.69 8.74 10.49 8.88 10.32C9.03 10.16 9.08 10.04 9.18 9.84C9.28 9.65 9.23 9.48 9.15 9.32C9.08 9.16 8.52 7.8 8.29 7.24C8.06 6.7 7.83 6.77 7.66 6.77C7.5 6.77 7.31 6.76 7.12 6.76C6.93 6.76 6.62 6.83 6.36 7.11C6.1 7.4 5.37 8.09 5.37 9.5C5.37 10.9 6.4 12.26 6.55 12.44C6.69 12.63 8.68 15.69 11.72 17C12.45 17.31 13.01 17.5 13.46 17.64C14.22 17.88 14.92 17.85 15.47 17.77C16.08 17.68 17.35 17 17.62 16.25C17.88 15.5 17.88 14.85 17.8 14.73C17.73 14.6 17.53 14.5 17.36 14.41L16.92 14.88Z" />
+        </svg>
+    </a>
+
+    <script>
+        // WhatsApp Logic
+        const phone = "5491126947928"; // Número real
+        const defaultMsg = "Hola, estoy interesado en los bolsones de Verde y Sano!";
+
+        document.querySelectorAll('.whatsapp-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const msg = link.getAttribute('data-msg') || defaultMsg;
+                const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
+                window.open(url, '_blank');
+            });
+        });
+
+        // Mobile Menu
+        const toggle = document.querySelector('.mobile-toggle');
+        const nav = document.querySelector('.nav-links');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                nav.classList.remove('active'); // Close menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = "0 4px 20px rgba(0,0,0,0.1)";
+            } else {
+                header.style.boxShadow = "0 2px 20px rgba(0,0,0,0.05)";
+            }
+        });
+    </script>
+</body>
+
+</html>
