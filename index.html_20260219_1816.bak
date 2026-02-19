@@ -898,8 +898,8 @@
                         <a href="#producto">El Bolsón</a>
                         <a href="#historia">Historia</a>
                         <a href="#mayorista">Mayoristas</a>
-                        <a href="javascript:void(0)" title="Instagram" class="ig-link"
-                            style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
+                        <a href="https://instagram.com/verduras_agroecologica" target="_blank" title="Instagram"
+                            class="ig-link" style="display: flex; align-items: center; gap: 5px;">
                             <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
                                 <defs>
                                     <linearGradient id="igGradNav" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -1105,8 +1105,8 @@
                 <p>Del campo a la mesa.</p>
 
                 <div style="margin: 20px 0;">
-                    <a href="javascript:void(0)" class="ig-link"
-                        style="display: inline-flex; align-items: center; gap: 8px; font-weight: 500; color: white; cursor: pointer;">
+                    <a href="https://instagram.com/verduras_agroecologica" target="_blank" class="ig-link"
+                        style="display: inline-flex; align-items: center; gap: 8px; font-weight: 500; color: white;">
                         <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
                             <defs>
                                 <linearGradient id="igGradFoot" x1="0%" y1="100%" x2="100%" y2="0%">
