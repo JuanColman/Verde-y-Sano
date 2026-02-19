@@ -1161,29 +1161,23 @@
                 });
             });
 
-            // Instagram deep link handler - Android Intent URL (más confiable)
+            // Instagram deep link handler (abre el perfil correcto en mobile)
             document.querySelectorAll('.ig-link').forEach(link => {
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const username = 'verduras_agroecologica';
-                    const webUrl = 'https://www.instagram.com/' + username + '/';
-                    const isAndroid = /Android/i.test(navigator.userAgent);
-                    const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-                    if (isAndroid) {
-                        // Android Intent URL: abre directamente el perfil en la app de Instagram
-                        const fallback = encodeURIComponent(webUrl);
-                        window.location.href = 'intent://www.instagram.com/' + username + '/#Intent;scheme=https;package=com.instagram.android;S.browser_fallback_url=' + fallback + ';end';
-                    } else if (isiOS) {
-                        // iOS: intenta el esquema de app, si falla abre en Safari
-                        window.location.href = 'instagram://user?username=' + username;
+                    const webUrl = 'https://instagram.com/' + username;
+                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                    if (isMobile) {
+                        // Intenta abrir la app de Instagram directamente al perfil
+                        window.location = 'instagram://user?username=' + username;
+                        // Si la app no se abre en 400ms, abre en el navegador
                         setTimeout(function () {
                             if (!document.hidden) {
                                 window.open(webUrl, '_blank');
                             }
                         }, 400);
                     } else {
-                        // PC / otros: abre en nueva pestaña
                         window.open(webUrl, '_blank');
                     }
                 });
