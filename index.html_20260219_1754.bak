@@ -899,7 +899,7 @@
                         <a href="#historia">Historia</a>
                         <a href="#mayorista">Mayoristas</a>
                         <a href="https://instagram.com/verduras_agroecologica" target="_blank" title="Instagram"
-                            class="ig-link" style="display: flex; align-items: center; gap: 5px;">
+                            style="display: flex; align-items: center; gap: 5px;">
                             <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
                                 <defs>
                                     <linearGradient id="igGradNav" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -1105,7 +1105,7 @@
                 <p>Del campo a la mesa.</p>
 
                 <div style="margin: 20px 0;">
-                    <a href="https://instagram.com/verduras_agroecologica" target="_blank" class="ig-link"
+                    <a href="https://instagram.com/verduras_agroecologica" target="_blank"
                         style="display: inline-flex; align-items: center; gap: 8px; font-weight: 500; color: white;">
                         <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
                             <defs>
@@ -1161,28 +1161,7 @@
                 });
             });
 
-            // Instagram deep link handler (abre el perfil correcto en mobile)
-            document.querySelectorAll('.ig-link').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const username = 'verduras_agroecologica';
-                    const webUrl = 'https://instagram.com/' + username;
-                    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                    if (isMobile) {
-                        // Intenta abrir la app de Instagram directamente al perfil
-                        window.location = 'instagram://user?username=' + username;
-                        // Si la app no se abre en 400ms, abre en el navegador
-                        setTimeout(function () {
-                            if (!document.hidden) {
-                                window.open(webUrl, '_blank');
-                            }
-                        }, 400);
-                    } else {
-                        window.open(webUrl, '_blank');
-                    }
-                });
-            });
-
+            // Mobile Menu
             const toggle = document.querySelector('.mobile-toggle');
             const nav = document.querySelector('.nav-links');
 
