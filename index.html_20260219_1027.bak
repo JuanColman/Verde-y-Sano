@@ -350,22 +350,9 @@
 
         .mobile-toggle {
             display: none;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
             color: var(--primary);
-            background: rgba(45, 79, 30, 0.1);
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            padding: 4px 10px;
-            line-height: 1;
-            transition: background 0.2s, color 0.2s;
-            user-select: none;
-        }
-
-        .mobile-toggle:hover,
-        .mobile-toggle:active {
-            background: var(--primary);
-            color: #fff;
         }
 
         /* HERO */
@@ -908,7 +895,7 @@
                         </a>
                         <a href="#contacto" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Hacer Pedido</a>
                     </div>
-                    <div class="mobile-toggle" aria-label="Abrir menú" role="button" tabindex="0">&#9776;</div>
+                    <div class="mobile-toggle">â˜°</div>
                 </nav>
             </div>
         </header>
@@ -1107,11 +1094,6 @@
                 </div>
 
                 <p>© 2026 Verde y Sano. Todos los derechos reservados.</p>
-                <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
-                    Pagina desarrollada por
-                    <a href="https://wa.me/5491168983355" target="_blank" rel="noopener"
-                        style="text-decoration: underline; color: inherit;">lic.juancolman@gmail.com</a>
-                </p>
             </div>
         </footer>
 
