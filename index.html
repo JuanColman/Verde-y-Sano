@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verde y Sano | Verdura Agroecológica en El Pato, Berazategui</title>
     <meta name="description"
-        content="Bolsones de verdura agroecológica certificada directo del productor en El Pato, Berazategui. Calidad premium, libre de agroquímicos.">
+        content="Bolsones y producción agroecológica por encargo, directo desde El Pato, Berazategui. Verduras frescas para familias, comercios y proyectos locales.">
     <link rel="canonical" href="https://juancolman.github.io/Verde-y-Sano/">
     <meta name="robots" content="index, follow">
 
@@ -19,7 +19,7 @@
       "image": "https://juancolman.github.io/Verde-y-Sano/Imagen%20de%20portada.png",
       "@id": "https://juancolman.github.io/Verde-y-Sano/",
       "url": "https://juancolman.github.io/Verde-y-Sano/",
-      "telephone": "+54 9 11 3111-0595",
+      "telephone": "+54 9 11 2694-7928",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "El Pato",
@@ -515,18 +515,6 @@
             flex: 1.1;
         }
 
-        .price-tag {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: 700;
-            margin-bottom: 25px;
-            font-size: 1.5rem;
-            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
-        }
-
         .product-list {
             margin-bottom: 30px;
         }
@@ -748,6 +736,187 @@
             fill: white;
         }
 
+        /* VISUAL REFINEMENT: identidad de huerta, cálida y contemporánea */
+        :root {
+            --primary: #1f4a3d;
+            --primary-light: #6f9871;
+            --secondary: #9e4d32;
+            --accent: #cf6b43;
+            --bg-light: #f8f4ec;
+            --bg-section: #dce6d3;
+            --text-dark: #21332b;
+            --text-gray: #536058;
+            --radius: 20px;
+            --shadow: 0 14px 36px rgba(31, 74, 61, 0.10);
+        }
+
+        body {
+            background: var(--bg-light);
+            background-image: radial-gradient(rgba(31, 74, 61, 0.035) 1px, transparent 1px);
+            background-size: 18px 18px;
+        }
+
+        h2 {
+            font-size: clamp(2.25rem, 4vw, 3.35rem);
+            letter-spacing: -0.035em;
+        }
+
+        h2::after {
+            width: 46px;
+            height: 5px;
+            background: var(--secondary);
+            border-radius: 999px;
+        }
+
+        .btn {
+            background: var(--primary);
+            padding: 14px 26px;
+            border-radius: 12px;
+            box-shadow: 0 8px 18px rgba(31, 74, 61, 0.18);
+            text-transform: none;
+            letter-spacing: 0.01em;
+        }
+
+        .btn:hover {
+            background: #16382e;
+            box-shadow: 0 12px 22px rgba(31, 74, 61, 0.24);
+            transform: translateY(-2px);
+        }
+
+        .btn.cta-pulse {
+            background: var(--secondary);
+            animation: none;
+            box-shadow: 0 8px 18px rgba(158, 77, 50, 0.26);
+        }
+
+        .btn.secondary {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.48);
+        }
+
+        header {
+            background: rgba(248, 244, 236, 0.91);
+            border-bottom: 1px solid rgba(31, 74, 61, 0.10);
+            box-shadow: none;
+        }
+
+        .nav-links {
+            gap: 27px;
+        }
+
+        .hero {
+            min-height: 650px;
+            background: linear-gradient(90deg, rgba(15, 48, 39, 0.87) 0%, rgba(15, 48, 39, 0.62) 47%, rgba(15, 48, 39, 0.18) 100%), url('Imagen de portada.png') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 760px;
+            padding: 42px 36px;
+            border-left: 3px solid #d9bd8b;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.4rem, 7vw, 5.7rem);
+            letter-spacing: -0.055em;
+            max-width: 650px;
+        }
+
+        .hero p {
+            font-size: 1.18rem;
+            max-width: 560px;
+        }
+
+        .benefits, .how-it-works, .pickup {
+            background-color: rgba(248, 244, 236, 0.88);
+        }
+
+        .benefits-grid {
+            gap: 24px;
+        }
+
+        .benefit-card, .b2b-card, .step {
+            border: 1px solid rgba(31, 74, 61, 0.12);
+            border-radius: 18px;
+            box-shadow: 0 8px 22px rgba(31, 74, 61, 0.06);
+        }
+
+        .benefit-card {
+            padding: 36px 28px;
+        }
+
+        .benefit-card:hover, .b2b-card:hover, .step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .benefit-icon {
+            background: #e1ebda;
+            border: 1px solid rgba(31, 74, 61, 0.10);
+        }
+
+        .product, .story {
+            background-color: var(--bg-section);
+        }
+
+        .product .container, .story .container {
+            display: grid;
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+            align-items: center;
+            gap: clamp(36px, 7vw, 88px);
+        }
+
+        .product-img, .story-img {
+            margin-top: 0;
+            border-radius: 36px 8px 36px 8px;
+            border: 8px solid rgba(255, 255, 255, 0.50);
+        }
+
+        .product-img {
+            order: 2;
+        }
+
+        .story-img {
+            order: 1;
+        }
+
+        .story-content {
+            order: 2;
+        }
+
+        .step {
+            background: rgba(255, 255, 255, 0.56);
+            padding: 30px 22px;
+        }
+
+        .step-number {
+            background: var(--secondary);
+            box-shadow: 0 6px 14px rgba(158, 77, 50, 0.20);
+        }
+
+        .b2b {
+            background: #eee5d5;
+        }
+
+        .b2b-card {
+            border-top: 5px solid var(--secondary);
+            padding: 32px;
+        }
+
+        .map-placeholder {
+            border: 7px solid rgba(31, 74, 61, 0.09);
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        footer {
+            background: #173d33;
+        }
+
+        .floating-whatsapp {
+            border: 4px solid var(--bg-light);
+            box-shadow: 0 8px 22px rgba(16, 73, 50, 0.35);
+        }
+
         /* RESPONSIVE TWEAKS */
         /* TABET & SMALL LAPTOP (900px - 1100px) */
         @media (max-width: 1100px) {
@@ -768,6 +937,17 @@
 
         /* MOBILE & TABLET PORTRAIT (< 900px) */
         @media (max-width: 900px) {
+            .product .container,
+            .story .container {
+                grid-template-columns: 1fr;
+                gap: 38px !important;
+            }
+
+            .hero-content {
+                border-left: 0;
+                padding: 28px 12px;
+            }
+
             .hero {
                 height: auto;
                 min-height: 100vh;
@@ -897,7 +1077,7 @@
                         <a href="#beneficios">Beneficios</a>
                         <a href="#producto">El Bolsón</a>
                         <a href="#historia">Historia</a>
-                        <a href="#mayorista">Mayoristas</a>
+                        <a href="#mayorista">Para negocios</a>
                         <a href="javascript:void(0)" title="Instagram" class="ig-link"
                             style="display: flex; align-items: center; gap: 5px; cursor: pointer;">
                             <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;">
@@ -915,7 +1095,8 @@
                             <span
                                 style="font-size: 0.9rem; font-weight: 600; background: linear-gradient(45deg, #FCAF45, #FD1D1D, #C13584, #405DE6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Seguinos</span>
                         </a>
-                        <a href="#contacto" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">Hacer Pedido</a>
+                        <a href="#" class="btn whatsapp-link" style="padding: 8px 20px; font-size: 0.9rem;"
+                            data-msg="Hola, quiero encargar un bolsón agroecológico. ¿Me cuentan la variedad de esta semana y cómo retiro en El Pato?">Encargar</a>
                     </div>
                     <div class="mobile-toggle" aria-label="Abrir menú" role="button" tabindex="0">&#9776;</div>
                 </nav>
@@ -925,11 +1106,11 @@
         <!-- Hero Section -->
         <section class="hero" id="inicio">
             <div class="container hero-content">
-                <h1>Del campo a tu mesa</h1>
-                <p>Producción agroecológica certificada. Verduras frescas, sin químicos y cultivadas con amor en El
-                    Pato,
-                    Berazategui.</p>
-                <a href="#" class="btn cta-pulse whatsapp-link">Pedir Bolsón Ahora</a>
+                <h1>Del campo a la mesa</h1>
+                <p>Verduras agroecológicas frescas, cultivadas cerca. Encargá tu bolsón por WhatsApp y retiralo en
+                    nuestro punto de El Pato.</p>
+                <a href="#" class="btn cta-pulse whatsapp-link"
+                    data-msg="Hola, quiero encargar un bolsón agroecológico. ¿Me cuentan la variedad de esta semana y cómo retiro en El Pato?">Encargar bolsón</a>
             </div>
         </section>
 
@@ -944,8 +1125,8 @@
                                 <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
                             </svg>
                         </div>
-                        <h3>Agroecológico Certificado</h3>
-                        <p>Garantía de calidad. Cultivamos respetando los ciclos naturales y sin agroquímicos.</p>
+                        <h3>Agroecología de cercanía</h3>
+                        <p>Cultivamos respetando los ciclos naturales, el suelo y la biodiversidad de nuestra huerta.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
@@ -955,7 +1136,7 @@
                             </svg>
                         </div>
                         <h3>Cosecha Semanal</h3>
-                        <p>Tus verduras se cosechan el mismo día de la entrega. Frescura inigualable.</p>
+                        <p>Preparamos cada bolsón con verduras de estación, cosechadas frescas desde nuestra huerta.</p>
                     </div>
                     <div class="benefit-card">
                         <div class="benefit-icon">
@@ -964,8 +1145,8 @@
                                     d="M16 11V5H6V11C6 11 6 13.5 11 16.5V20H8V22H16V20H13V16.5C18 13.5 18 11 18 11M3 3H21V5H3V3Z" />
                             </svg>
                         </div>
-                        <h3>Equipo Profesional</h3>
-                        <p>Producción a cargo de estudiantes y docentes de agronomía comprometidos.</p>
+                        <h3>Variedades con identidad</h3>
+                        <p>Además de lo esencial, cultivamos especies y sabores que hacen especial a cada temporada.</p>
                     </div>
                 </div>
             </div>
@@ -976,16 +1157,15 @@
             <div class="container">
                 <div class="product-info">
                     <h2>El Bolsón Semanal</h2>
-                    <span class="price-tag">$15.000 / 15kg</span>
-                    <p style="margin-bottom: 20px;">Una selección equilibrada de 15 kilos de las mejores verduras de
-                        estación. Ideal para familias que buscan alimentación saludable a precio justo.</p>
+                    <p style="margin-bottom: 20px;">Una selección equilibrada de verduras de estación, cosechadas
+                        cerca y pensada para comer rico, fresco y variado.</p>
                     <ul class="product-list">
-                        <li>Precio final: $1.000 por kilo</li>
-                        <li>Variedad según cosecha (papas, tomates, lechuga, etc.)</li>
+                        <li>Variedad según la cosecha de la semana</li>
                         <li>Sin intermediarios</li>
                         <li>Cajón de madera retornable opcional</li>
                     </ul>
-                    <a href="#" class="btn whatsapp-link">Reservar mi bolsón</a>
+                    <a href="#" class="btn whatsapp-link"
+                        data-msg="Hola, quiero reservar un bolsón. ¿Cuál es la variedad de esta semana y cómo retiro en El Pato?">Reservar mi bolsón</a>
                 </div>
                 <div class="product-img">
                     <img src="foto siembra.jpeg" alt="Bolsón de verduras frescas" loading="lazy">
@@ -1001,17 +1181,17 @@
                     <div class="step">
                         <div class="step-number">1</div>
                         <h3>Hacé tu pedido</h3>
-                        <p>Envianos un WhatsApp reservando tu bolsón antes del Viernes.</p>
+                        <p>Escribinos por WhatsApp para conocer el bolsón de la semana y reservar el tuyo.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>Cosechamos</h3>
-                        <p>El equipo prepara cada bolsón seleccionando lo mejor de la huerta.</p>
+                        <p>Cosechamos y armamos tu bolsón con lo mejor disponible de nuestra huerta.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
-                        <h3>Retirás o Recibís</h3>
-                        <p>Coordinamos la entrega o retiro por nuestro punto en El Pato.</p>
+                        <h3>Retirás en El Pato</h3>
+                        <p>Coordinamos el día y retirás tu pedido en nuestro punto de Ruta 2 Km 40.</p>
                     </div>
                 </div>
             </div>
@@ -1046,28 +1226,28 @@
 
         <section class="b2b" id="mayorista">
             <div class="container">
-                <h2>¿Tenés un negocio?</h2>
-                <p>Abastecemos a comercios con la mejor calidad y precios especiales.</p>
+                <h2>Producción para proyectos y negocios</h2>
+                <p>Trabajamos directo con quienes quieren sumar verduras agroecológicas frescas a su propuesta.</p>
                 <div class="b2b-grid">
                     <div class="b2b-card">
-                        <h3>Restaurantes</h3>
-                        <p>Pedidos personalizados según tu menú. Calidad gourmet y frescura diaria para tus platos.
-                        </p>
+                        <h3>Surcos por encargo</h3>
+                        <p>Planificamos y cultivamos producción exclusiva para tu proyecto. Ideal si armás tus propios
+                            bolsones o necesitás asegurar una variedad y volumen determinados.</p>
                     </div>
                     <div class="b2b-card">
-                        <h3>Verdulerías</h3>
-                        <p>Compra mayorista directa. Diferenciá tu negocio ofreciendo productos agroecológicos
-                            certificados.
-                        </p>
+                        <h3>Comercios y almacenes</h3>
+                        <p>Abastecimiento mayorista directo de la huerta para diferenciar tu negocio con productos
+                            frescos, de estación y de cercanía.</p>
                     </div>
                     <div class="b2b-card">
-                        <h3>Almacenes</h3>
-                        <p>Incorporá bolsones cerrados listos para vender. Una opción práctica para tus clientes.</p>
+                        <h3>Restaurantes y cocina</h3>
+                        <p>Verduras y variedades especiales para cartas que valoran el origen, la frescura y el sabor
+                            de cada temporada.</p>
                     </div>
                 </div>
                 <br><br>
                 <a href="#" class="btn secondary whatsapp-link"
-                    data-msg="Hola, me interesa comprar al por mayor para mi negocio.">Consultar por Mayorista</a>
+                    data-msg="Hola, me interesa conocer la producción agroecológica mayorista y los surcos por encargo.">Consultar producción por encargo</a>
             </div>
         </section>
 
@@ -1075,8 +1255,8 @@
         <section class="pickup" id="contacto">
             <div class="container">
                 <div class="section-center">
-                    <h2>Ubicación</h2>
-                    <p>Estamos en el corazón productivo de El Pato, Berazategui.</p>
+                    <h2>Retirá tu pedido en El Pato</h2>
+                    <p>Un punto de retiro para encontrarnos cerca de la huerta.</p>
                 </div>
                 <div class="map-placeholder">
                     <iframe
@@ -1085,10 +1265,11 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <p style="text-align: center; margin-top: 10px;"><strong>Dirección:</strong> Ruta 2 Km 40, El Pato,
-                    Berazategui.</p>
+                <p style="text-align: center; margin-top: 10px;"><strong>Punto de retiro:</strong> Ruta 2 Km 40, El Pato,
+                    Berazategui. Coordinamos día y horario por WhatsApp.</p>
                 <div style="text-align: center; margin-top: 30px;">
-                    <a href="#" class="btn whatsapp-link">Coordinar Visita</a>
+                    <a href="#" class="btn whatsapp-link"
+                        data-msg="Hola, quiero coordinar el retiro de mi pedido en El Pato.">Coordinar mi retiro</a>
                 </div>
             </div>
         </section>
@@ -1127,7 +1308,7 @@
                 <p
                     style="margin-top: 10px; font-size: 0.9rem; opacity: 0.85; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;">
                     Pagina desarrollada por
-                    <a href="https://wa.me/5491168983355" target="_blank" rel="noopener"
+                    <a href="mailto:lic.juancolman@gmail.com"
                         style="display: inline-flex; align-items: center; gap: 5px; color: inherit; text-decoration: none;">
                         <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: #25D366; flex-shrink: 0;">
                             <path
@@ -1197,7 +1378,7 @@
             });
 
             // Smooth Scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            document.querySelectorAll('a[href^="#"]:not(.whatsapp-link)').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     nav.classList.remove('active'); // Close menu on click
